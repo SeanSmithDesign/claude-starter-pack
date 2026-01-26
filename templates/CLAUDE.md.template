@@ -1,0 +1,86 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code when working with code in this repository.
+
+## Project Overview
+
+<!-- Replace with your project description -->
+[Project Name] is a [type of application] built with [tech stack].
+
+## Build Commands
+
+```bash
+# Build the project
+[your build command]
+
+# Run tests
+[your test command]
+
+# Run development server
+[your dev command]
+```
+
+## Architecture
+
+<!-- Describe your project structure -->
+### Key Components
+
+**Directory Structure:**
+- `src/` - Source code
+- `tests/` - Test files
+- `docs/` - Documentation
+
+### Key Files
+- `[main entry point]` - Application entry
+- `[config file]` - Configuration
+
+## Code Patterns
+
+<!-- Document patterns specific to your project -->
+- [Pattern 1]
+- [Pattern 2]
+
+---
+
+## Security Rules (Always Apply)
+
+> Full details in `.claude/rules/security.md`
+
+### Secrets & Credentials
+- ❌ **NEVER** hardcode: API keys, passwords, tokens, credentials
+- ✅ **ALWAYS** use: Environment variables, secrets managers
+
+### PII (Personally Identifiable Information)
+- ❌ **NEVER** log: Email, phone, SSN, IP addresses
+- ✅ **ALWAYS**: Redact before logging, tokenize before LLM processing
+
+---
+
+## Testing Rules (Always Apply)
+
+> Full details in `.claude/rules/testing.md`
+
+### The Iron Law
+```
+NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
+```
+
+### TDD Cycle
+1. 🔴 **Red** — Write failing test
+2. 🟢 **Green** — Write minimal code to pass
+3. 🔵 **Refactor** — Clean up, tests still pass
+
+---
+
+## Skills & Automation
+
+This project uses Claude Code skills from `.claude/skills/`. Key skills:
+- **test-driven-development** — TDD methodology
+- **systematic-debugging** — Root cause investigation
+- **code-reviewer** — Code review best practices
+
+<!-- Add platform-specific skills if applicable -->
+<!-- - **ios-swift-development** — SwiftUI, MVVM patterns -->
+<!-- - **senior-frontend** — React, Next.js patterns -->
+
+Skills activate automatically based on context.

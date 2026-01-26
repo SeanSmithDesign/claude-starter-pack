@@ -1,0 +1,58 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Web development - React, Next.js, TypeScript, Playwright",
+  "author": "Sean Smith",
+  "license": "MIT",
+
+  "skills": [
+    "senior-frontend",
+    "senior-fullstack",
+    "frontend-design"
+  ],
+
+  "planned": [
+    "playwright-e2e"
+  ],
+
+  "extends": {
+    "design": ["interface-design", "accessibility-a11y"],
+    "patterns": ["WCAG 2.1 AA", "ARIA", "Responsive Design"]
+  },
+
+  "agents": "AGENTS.md",
+
+  "dependencies": ["core"],
+
+  "platforms": ["web"],
+
+  "buildCommands": {
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "test": "npm test",
+    "lint": "npm run lint",
+    "typecheck": "npm run typecheck"
+  },
+
+  "settings": {
+    "permissions": [
+      "Bash(npm:*)",
+      "Bash(npx:*)"
+    ]
+  },
+
+  "techStack": [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Playwright"
+  ],
+
+  "breakpoints": {
+    "mobile": "320px",
+    "tablet": "768px",
+    "desktop": "1024px",
+    "large": "1440px"
+  }
+}

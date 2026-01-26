@@ -1,0 +1,45 @@
+{
+  "name": "ios",
+  "version": "1.0.0",
+  "description": "iOS/macOS development - SwiftUI, MVVM, App Store optimization",
+  "author": "Sean Smith",
+  "license": "MIT",
+
+  "skills": [
+    "ios-swift-development",
+    "app-store-optimization"
+  ],
+
+  "extends": {
+    "design": ["interface-design", "accessibility-a11y"],
+    "patterns": ["Apple HIG", "SF Symbols", "Dynamic Type", "VoiceOver"]
+  },
+
+  "agents": "AGENTS.md",
+
+  "dependencies": ["core"],
+
+  "platforms": ["ios", "macos", "tvos", "watchos"],
+
+  "buildCommands": {
+    "build": "xcodebuild -project ${PROJECT}.xcodeproj -scheme ${SCHEME} build",
+    "test": "xcodebuild -project ${PROJECT}.xcodeproj -scheme ${SCHEME} test",
+    "clean": "xcodebuild -project ${PROJECT}.xcodeproj -scheme ${SCHEME} clean"
+  },
+
+  "settings": {
+    "permissions": [
+      "Bash(xcodebuild:*)",
+      "Bash(sips:*)",
+      "Bash(codesign:*)"
+    ]
+  },
+
+  "frameworks": [
+    "SwiftUI",
+    "Combine",
+    "CoreData",
+    "CloudKit",
+    "StoreKit"
+  ]
+}

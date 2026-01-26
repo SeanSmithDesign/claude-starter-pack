@@ -1,0 +1,57 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "Core engineering skills - architecture, TDD, workflow, code review",
+  "author": "Sean Smith",
+  "license": "MIT",
+
+  "skills": [
+    "senior-architect",
+    "senior-backend",
+    "senior-devops",
+    "code-reviewer",
+    "test-driven-development",
+    "tdd-guide",
+    "systematic-debugging",
+    "brainstorming",
+    "writing-plans",
+    "executing-plans",
+    "finishing-a-development-branch",
+    "requesting-code-review",
+    "receiving-code-review",
+    "dispatching-parallel-agents",
+    "subagent-driven-development"
+  ],
+
+  "crossCutting": [
+    "interface-design",
+    "accessibility-a11y",
+    "ui-design-system",
+    "ux-researcher-designer"
+  ],
+
+  "security": [
+    "senior-security",
+    "senior-secops",
+    "gdpr-dsgvo-expert",
+    "information-security-manager-iso27001"
+  ],
+
+  "rules": [
+    "rules/security.md",
+    "rules/code-quality.md",
+    "rules/testing.md"
+  ],
+
+  "hooks": [
+    "hooks/PreToolUse/Edit/security-check.sh",
+    "hooks/PostToolUse/Edit/auto-lint.sh",
+    "hooks/PostToolUse/Bash/test-watcher.sh"
+  ],
+
+  "agents": "AGENTS.md",
+
+  "dependencies": [],
+
+  "platforms": ["all"]
+}
