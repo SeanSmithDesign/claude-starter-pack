@@ -88,12 +88,68 @@ Essential engineering and workflow skills:
 | information-security-manager-iso27001 | ISO 27001 ISMS |
 
 ### Extended (Optional)
-Additional specialized skills in `extended/`:
-- AI/ML, Data Science
-- Product Management
-- Marketing & Content
-- C-Level Advisory
-- HealthTech/Regulatory
+Additional specialized skills in `extended/`. Copy only what you need:
+
+**AI/ML & Data:**
+| Skill | Description |
+|-------|-------------|
+| senior-ml-engineer | ML pipelines, model training |
+| senior-data-scientist | Data analysis, modeling |
+| senior-data-engineer | Data pipelines, ETL |
+| senior-computer-vision | CV models, image processing |
+| senior-prompt-engineer | Prompt design, LLM optimization |
+
+**Product & Strategy:**
+| Skill | Description |
+|-------|-------------|
+| product-manager-toolkit | PRDs, roadmaps, prioritization |
+| agile-product-owner | Agile/Scrum methodology |
+| product-strategist | Product strategy |
+
+**Marketing & Content:**
+| Skill | Description |
+|-------|-------------|
+| content-creator | Blog, social content |
+| marketing-strategy-pmm | Product marketing |
+| marketing-demand-acquisition | Growth, lead gen |
+| social-media-analyzer | Social metrics analysis |
+
+**C-Level Advisory:**
+| Skill | Description |
+|-------|-------------|
+| ceo-advisor | Executive strategy |
+| cto-advisor | Technical leadership |
+| c-level | General executive advisory |
+
+**HealthTech & Regulatory:**
+| Skill | Description |
+|-------|-------------|
+| mdr-745-specialist | EU MDR compliance |
+| fda-consultant-specialist | FDA 510(k), QSR |
+| quality-manager-qms-iso13485 | ISO 13485 QMS |
+| quality-manager-qmr | Quality management |
+| regulatory-affairs-head | Regulatory strategy |
+| risk-management-specialist | ISO 14971 risk management |
+| capa-officer | CAPA processes |
+| qms-audit-expert | QMS auditing |
+| isms-audit-expert | ISMS auditing |
+| quality-documentation-manager | QMS documentation |
+
+**Infrastructure & QA:**
+| Skill | Description |
+|-------|-------------|
+| aws-solution-architect | AWS architecture |
+| ms365-tenant-manager | Microsoft 365 admin |
+| senior-qa | Quality assurance |
+| tech-stack-evaluator | Technology selection |
+
+**Workflow & Writing:**
+| Skill | Description |
+|-------|-------------|
+| writing-skills | Technical writing |
+| using-git-worktrees | Git worktree workflows |
+| using-superpowers | Claude Code power features |
+| verification-before-completion | Pre-commit verification |
 
 ## Installation Methods
 
