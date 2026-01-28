@@ -91,6 +91,11 @@ cp -r "$SCRIPT_DIR/.claude/rules/"* "$TARGET_DIR/.claude/rules/" 2>/dev/null || 
 echo "📦 Copying packs..."
 cp -r "$SCRIPT_DIR/.claude/packs/"* "$TARGET_DIR/.claude/packs/" 2>/dev/null || true
 
+# Copy MCP documentation
+echo "📡 Copying MCP documentation..."
+mkdir -p "$TARGET_DIR/.claude/mcp"
+cp -r "$SCRIPT_DIR/.claude/mcp/"* "$TARGET_DIR/.claude/mcp/" 2>/dev/null || true
+
 # Copy CLAUDE.md template if not exists
 if [ ! -f "$TARGET_DIR/CLAUDE.md" ]; then
     echo "📝 Creating CLAUDE.md template..."
@@ -98,12 +103,42 @@ if [ ! -f "$TARGET_DIR/CLAUDE.md" ]; then
     echo "   ⚠️  Edit CLAUDE.md with your project details!"
 fi
 
+# MCP Server Setup (optional)
+echo ""
+echo "🔌 MCP Servers (optional — extend Claude with external tools):"
+echo "  1) None (skip)"
+echo "  2) Figma Console (design token extraction, component inspection)"
+echo "  3) Design Systems (search 188+ design system knowledge entries)"
+echo "  4) Both"
+read -p "Choice [1-4]: " mcp_choice
+
+echo ""
+case $mcp_choice in
+    2)
+        echo "📋 To enable Figma Console MCP, run:"
+        echo "   claude mcp add --transport sse figma-console https://figma-console-mcp.southleft.com/sse"
+        ;;
+    3)
+        echo "📋 To enable Design Systems MCP, run:"
+        echo "   claude mcp add --transport http design-systems https://design-systems-mcp.southleft.com/mcp"
+        ;;
+    4)
+        echo "📋 To enable MCP servers, run these commands:"
+        echo "   claude mcp add --transport sse figma-console https://figma-console-mcp.southleft.com/sse"
+        echo "   claude mcp add --transport http design-systems https://design-systems-mcp.southleft.com/mcp"
+        ;;
+    *)
+        echo "⏭️  Skipping MCP setup..."
+        ;;
+esac
+
 echo ""
 echo "✅ Installation complete!"
 echo ""
 echo "Next steps:"
 echo "  1. Edit $TARGET_DIR/CLAUDE.md with your project info"
 echo "  2. Run 'claude' to start using Claude Code"
+echo "  3. (Optional) Set up MCP servers — see .claude/mcp/README.md"
 echo ""
 echo "To add extended skills later:"
 echo "  cp -r $SCRIPT_DIR/.claude/skills/extended/<skill-name> $TARGET_DIR/.claude/skills/"

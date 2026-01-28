@@ -56,6 +56,24 @@ This file defines how skills combine into agent personas and workflow chains.
 
 ---
 
+### Design Bridge Agent
+**Skills:** figma-design-bridge, design-knowledge-search, interface-design, accessibility-a11y
+**MCP Required:** figma-console, design-systems (optional, graceful fallback)
+**Triggers:** "Figma", "design tokens", "design specs", "extract from design", "design system research", "implement this design"
+
+**Workflow:**
+1. Take Figma screenshot to understand current design (`figma_take_screenshot`)
+2. Extract design tokens and variables (`figma_get_variables`, `figma_get_styles`)
+3. Research relevant design system patterns (`search_design_knowledge`)
+4. Inspect specific components for dev specs (`figma_get_component_for_development`)
+5. Generate platform-appropriate code with tokens applied
+
+**Use when:** Implementing designs from Figma, extracting design tokens, researching design system best practices, creating components that match design specifications.
+
+**Fallback:** If MCP servers are not configured, use interface-design and ui-design-system skills with manual specifications.
+
+---
+
 ## Skill Chains
 
 ### Feature Development Chain
@@ -91,6 +109,20 @@ code-reviewer → writing-plans → test-driven-development → code-reviewer
 2. **writing-plans** - Plan refactoring steps
 3. **test-driven-development** - Refactor with test coverage
 4. **code-reviewer** - Verify improvements
+
+---
+
+### Design-to-Code Chain
+```
+figma-design-bridge → design-knowledge-search → interface-design → test-driven-development → accessibility-a11y → code-reviewer
+```
+
+1. **figma-design-bridge** - Extract design tokens and component specs from Figma
+2. **design-knowledge-search** - Research relevant design system patterns and standards
+3. **interface-design** - Apply Rams principles, fill gaps not specified in design
+4. **test-driven-development** - Implement component with TDD
+5. **accessibility-a11y** - Verify WCAG compliance
+6. **code-reviewer** - Review implementation accuracy vs. design
 
 ---
 
@@ -140,6 +172,8 @@ These skills enhance all workflows:
 |-------|--------------|
 | interface-design | Any UI work |
 | accessibility-a11y | Any UI work |
+| figma-design-bridge | Any UI work with Figma MCP active |
+| design-knowledge-search | Any design decisions with Design Systems MCP active |
 | senior-security | Any code touching auth, data, APIs |
 
 ---
@@ -157,6 +191,10 @@ Start
 ├── Is this a refactor?
 │   └── YES → Refactoring Chain
 │       └── Start with code-reviewer (assess)
+├── Is this a design implementation?
+│   └── YES → Design-to-Code Chain
+│       ├── MCP active → Start with figma-design-bridge
+│       └── No MCP → Start with interface-design
 ├── Is this a code review?
 │   └── YES → Use Reviewer Agent
 └── Is this research/exploration?

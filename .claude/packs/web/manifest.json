@@ -15,6 +15,10 @@
     "playwright-e2e"
   ],
 
+  "mcp": {
+    "recommended": ["figma-console", "design-systems"]
+  },
+
   "extends": {
     "design": ["interface-design", "accessibility-a11y"],
     "patterns": ["WCAG 2.1 AA", "ARIA", "Responsive Design"]

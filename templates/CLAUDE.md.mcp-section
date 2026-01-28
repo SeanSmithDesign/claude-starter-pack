@@ -1,0 +1,17 @@
+<!-- MCP Servers (Optional) -->
+<!-- Uncomment this section if you have configured MCP servers -->
+<!--
+## MCP Servers
+
+This project uses optional MCP servers for enhanced design capabilities.
+
+### Figma Console
+Design token extraction, component inspection, and screenshots from Figma.
+- Setup: `claude mcp add --transport sse figma-console https://figma-console-mcp.southleft.com/sse`
+
+### Design Systems
+Semantic search across 188+ curated design systems knowledge entries (W3C, WCAG 2.2, Material Design, Carbon, Polaris, etc.)
+- Setup: `claude mcp add --transport http design-systems https://design-systems-mcp.southleft.com/mcp`
+
+See `.claude/mcp/README.md` for full details.
+-->

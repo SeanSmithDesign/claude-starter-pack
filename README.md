@@ -20,6 +20,7 @@ cp claude-starter-pack/templates/CLAUDE.md.template ./your-project/CLAUDE.md
 ```
 .claude/
 ├── hooks/          # Automation (runs on tool use)
+├── mcp/            # MCP server documentation & setup
 ├── rules/          # Always-active guidelines
 ├── packs/          # Pack manifests & agent orchestration
 └── skills/
@@ -78,6 +79,24 @@ Essential engineering and workflow skills:
 | accessibility-a11y | WCAG 2.1 AA, VoiceOver, ARIA |
 | ui-design-system | Design tokens, components |
 | ux-researcher-designer | User research, personas, journey maps |
+
+### MCP Servers (Optional)
+
+MCP (Model Context Protocol) servers extend Claude Code with live external tool access. These are opt-in and require one-time setup.
+
+| Server | Description | Setup |
+|--------|-------------|-------|
+| Figma Console | Design token extraction, component inspection, screenshots | `claude mcp add --transport sse figma-console https://figma-console-mcp.southleft.com/sse` |
+| Design Systems | Semantic search across 188+ design systems (W3C, WCAG, Material, etc.) | `claude mcp add --transport http design-systems https://design-systems-mcp.southleft.com/mcp` |
+
+**Companion Skills** (installed automatically with design skills):
+
+| Skill | Description | Requires MCP |
+|-------|-------------|-------------|
+| figma-design-bridge | Design-to-code workflow using Figma | figma-console |
+| design-knowledge-search | Search curated design systems knowledge | design-systems |
+
+See `.claude/mcp/README.md` for full details, additional setup modes, and future MCP options.
 
 ### Security (Recommended)
 | Skill | Description |

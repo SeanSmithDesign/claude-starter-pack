@@ -27,8 +27,29 @@
     "interface-design",
     "accessibility-a11y",
     "ui-design-system",
-    "ux-researcher-designer"
+    "ux-researcher-designer",
+    "figma-design-bridge",
+    "design-knowledge-search"
   ],
+
+  "mcp": {
+    "optional": [
+      {
+        "name": "figma-console",
+        "transport": "sse",
+        "url": "https://figma-console-mcp.southleft.com/sse",
+        "enhances": ["figma-design-bridge", "interface-design", "ui-design-system"],
+        "docs": "mcp/figma-console.md"
+      },
+      {
+        "name": "design-systems",
+        "transport": "http",
+        "url": "https://design-systems-mcp.southleft.com/mcp",
+        "enhances": ["design-knowledge-search", "accessibility-a11y", "interface-design"],
+        "docs": "mcp/design-systems.md"
+      }
+    ]
+  },
 
   "security": [
     "senior-security",

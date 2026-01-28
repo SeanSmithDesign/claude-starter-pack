@@ -42,14 +42,16 @@ Extends Core Pack with Web-specific capabilities.
 
 ### Web UI Agent
 **Inherits:** Developer Agent
-**Additional Skills:** senior-frontend, frontend-design, interface-design, accessibility-a11y
+**Additional Skills:** senior-frontend, frontend-design, interface-design, accessibility-a11y, figma-design-bridge, design-knowledge-search
 
 **Workflow:**
-1. Apply Rams design principles
-2. Design component API
-3. Implement with React/Tailwind
-4. Verify WCAG 2.1 AA compliance
-5. Test responsive breakpoints
+1. Extract design specs from Figma (if MCP active: `figma_get_component_for_development`)
+2. Research component patterns (`search_design_knowledge` if MCP active)
+3. Apply Rams design principles
+4. Design component API
+5. Implement with React/Tailwind
+6. Verify WCAG 2.1 AA compliance
+7. Test responsive breakpoints
 
 **Checklist:**
 - [ ] Semantic HTML structure
@@ -88,6 +90,11 @@ interface-design (design) → senior-frontend (implement) → accessibility-a11y
 ### API Development
 ```
 senior-architect (design) → senior-backend (implement TDD) → senior-frontend (consume) → code-reviewer
+```
+
+### Figma-to-React Component
+```
+figma-design-bridge (extract specs) → design-knowledge-search (research patterns) → senior-frontend (implement) → accessibility-a11y (verify) → code-reviewer
 ```
 
 ---

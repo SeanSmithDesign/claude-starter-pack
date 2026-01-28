@@ -9,12 +9,16 @@ Modular, composable skill packs for different project types.
 │              AUTOMATION LAYER                        │
 │      hooks/ + rules/ + AGENTS.md orchestration      │
 ├─────────────────────────────────────────────────────┤
+│            MCP SERVERS (Optional)                    │
+│   figma-console + design-systems + [future]         │
+├─────────────────────────────────────────────────────┤
 │  ┌──────────┐  ┌──────────┐  ┌──────────────────┐  │
 │  │ iOS Pack │  │ Web Pack │  │ Cross-Platform   │  │
 │  └──────────┘  └──────────┘  └──────────────────┘  │
 ├─────────────────────────────────────────────────────┤
 │             DESIGN & ACCESSIBILITY                   │
 │   interface-design + accessibility + ui-design       │
+│   + figma-design-bridge + design-knowledge-search   │
 ├─────────────────────────────────────────────────────┤
 │                 SECURITY LAYER                       │
 │     gdpr + iso-27001 + senior-security              │
@@ -90,6 +94,28 @@ Defines:
 - Skill chains (ordered workflows)
 - Sub-agent patterns (parallel vs sequential)
 
+### MCP Configuration in Manifests
+
+Packs can declare MCP server dependencies:
+
+```json
+{
+  "mcp": {
+    "optional": [
+      {
+        "name": "figma-console",
+        "transport": "sse",
+        "url": "https://figma-console-mcp.southleft.com/sse",
+        "enhances": ["figma-design-bridge"],
+        "docs": "mcp/figma-console.md"
+      }
+    ]
+  }
+}
+```
+
+MCP servers are never auto-configured. The manifest declares intent; the user runs `claude mcp add` commands manually. See `.claude/mcp/README.md` for setup instructions.
+
 ## Using Packs
 
 ### For a New iOS Project
@@ -138,5 +164,6 @@ Packs are designed for minimal context usage:
 | Skills | On-demand | ~500-800 each |
 | Hooks | External | 0 |
 | Rules | Always | ~200-500 total |
+| MCP docs | On-demand | ~300-500 each |
 
 Typical usage: ~1,500 tokens base + skills as needed.

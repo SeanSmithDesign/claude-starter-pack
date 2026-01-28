@@ -21,9 +21,10 @@ echo ""
 echo "What would you like to update?"
 echo "  1) Skills only (safe - won't touch hooks/rules)"
 echo "  2) Hooks and rules only"
-echo "  3) Everything (skills, hooks, rules, packs)"
+echo "  3) Everything (skills, hooks, rules, packs, MCP docs)"
 echo "  4) Specific skill layer (core/platform/design/security)"
-read -p "Choice [1-4]: " update_choice
+echo "  5) MCP documentation only"
+read -p "Choice [1-5]: " update_choice
 
 case $update_choice in
     1)
@@ -42,6 +43,8 @@ case $update_choice in
         rsync -av "$SCRIPT_DIR/.claude/hooks/" "$TARGET_DIR/.claude/hooks/"
         rsync -av "$SCRIPT_DIR/.claude/rules/" "$TARGET_DIR/.claude/rules/"
         rsync -av "$SCRIPT_DIR/.claude/packs/" "$TARGET_DIR/.claude/packs/"
+        mkdir -p "$TARGET_DIR/.claude/mcp"
+        rsync -av "$SCRIPT_DIR/.claude/mcp/" "$TARGET_DIR/.claude/mcp/"
         ;;
     4)
         echo "Which layer?"
@@ -65,6 +68,11 @@ case $update_choice in
 
         echo "📋 Updating $LAYER skills..."
         rsync -av "$SCRIPT_DIR/.claude/skills/$LAYER/" "$TARGET_DIR/.claude/skills/"
+        ;;
+    5)
+        echo "📡 Updating MCP documentation..."
+        mkdir -p "$TARGET_DIR/.claude/mcp"
+        rsync -av "$SCRIPT_DIR/.claude/mcp/" "$TARGET_DIR/.claude/mcp/"
         ;;
     *)
         echo "Invalid choice"
